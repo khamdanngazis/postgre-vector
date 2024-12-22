@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  postgres:
+    image: ankane/pgvector  # Prebuilt image with pgvector extension
+    container_name: postgres_with_pgvector
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: IAtOybGapG8OPbG
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5433:5432"  # Map host port 5433 to container port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
